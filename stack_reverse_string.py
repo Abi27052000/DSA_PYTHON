@@ -21,11 +21,18 @@ class Stack:
         return len(self.container)
 
 
-s = Stack()
-s.push(5)
-s.push(9)
-s.push(34)
-s.push(78)
-s.push(12)
+def reverse_string(text):
+    stack = Stack()
 
-print(s.container)
+    for i in text:
+        stack.push(i)
+
+    newText = ""
+
+    while not (stack.is_empty()):
+        newText += stack.pop()
+
+    return newText
+
+
+print(reverse_string("We will conquere COVID-19"))
